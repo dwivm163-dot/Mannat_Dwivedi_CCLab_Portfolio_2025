@@ -3,6 +3,8 @@ function setup() {
   canvas = createCanvas(400, 400);
   // attach the canvas to the div in your HTML
   canvas.parent("sketch-container");
+angleMode(DEGREES); 
+  
 
 function draw() { 
   background(0, 51, 102);
@@ -177,4 +179,5 @@ pop();
 
 pop();
  
+
 }
