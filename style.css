@@ -1,4 +1,3 @@
-
 /* Global styles */
 * {
   box-sizing: border-box;
@@ -18,13 +17,12 @@ main {
   margin: 0 auto;
 }
 
-/* Navigation */
-nav ul {
-  list-style: none;
-  padding: 0;
+/* Navigation – matches your current HTML (no <ul>) */
+nav {
   margin: 0 0 20px 0;
   display: flex;
   gap: 16px;
+  align-items: center;
 }
 
 nav a {
@@ -57,7 +55,7 @@ p {
   line-height: 1.5;
 }
 
-/* Project iframe */
+/* Project iframe (for pages where you embed sketches) */
 iframe {
   width: 100%;           /* fills the content width */
   max-width: 800px;      /* don’t get too huge on big screens */
