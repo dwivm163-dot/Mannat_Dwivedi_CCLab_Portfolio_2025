@@ -1,4 +1,5 @@
 /* Global styles */
+
 * {
   box-sizing: border-box;
 }
@@ -42,6 +43,12 @@ body::before {
 main {
   max-width: 900px;
   margin: 0 auto;
+}
+
+/* Override for hero - full width, left aligned */
+main.hero {
+  max-width: 100%;
+  margin: 0;
 }
 
 /* Navigation – fixed top right, white text */
@@ -116,6 +123,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;           /* align content to the left */
   padding: 0 40px 40px;
 }
 
@@ -157,12 +165,12 @@ p {
 /* signature bottom-right */
 .hero-name {
   position: absolute;
-  right: 60px;          /* distance from right edge */
-  bottom: 40px;         /* distance from bottom edge */
+  right: 40px;          /* distance from right edge */
+  bottom: 30px;         /* distance from bottom edge */
 
   font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: 2rem;      /* bigger name */
-  font-weight: 400;     /* regular, not bold */
+  font-size: 1.8rem;
+  font-weight: 300;     /* lighter weight for regular look */
   color: #ffffff;
 
   margin: 0;
@@ -181,35 +189,112 @@ h2 {
 
 /* Projects page layout */
 .projects-page {
-  max-width: 900px;
-  margin: 40px auto 60px;
-  padding: 0 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 40px 60px;
+}
+
+.projects-page h1 {
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .projects-intro {
   max-width: 620px;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+  opacity: 0.95;
 }
 
-.project-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Glassmorphism Project Cards Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
 }
 
-.project-list li {
-  margin-bottom: 10px;
-}
-
-.project-list a {
-  color: #ffffff;
+.project-card {
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  
+  padding: 28px;
   text-decoration: none;
-  font-size: 1rem;
-  border-bottom: 1px solid transparent;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  /* Subtle shadow for depth */
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-.project-list a:hover {
-  border-bottom-color: #ffffff;
+.project-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    0 16px 48px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.project-number {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+.project-card .project-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 4px 0 8px 0;
+  line-height: 1.3;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.project-card .project-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.project-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 12px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.project-card:hover .project-link {
+  opacity: 1;
+}
+
+/* Responsive adjustments for cards */
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-page {
+    padding: 90px 20px 40px;
+  }
 }
 
 
