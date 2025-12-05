@@ -5,10 +5,36 @@
 
 body {
   margin: 0;
-  padding: 40px;
-  font-family: "Courier New", "Lucida Console", monospace; /* typewriter vibe */
-  background-color: #f4ecff; /* light purple */
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* animated gradient using your palette */
+  background: linear-gradient(
+    130deg,
+    #530034 0%,   /* plum */
+    #b75e7e 30%,  /* mauve pink */
+    #90b6a0 65%,  /* light teal */
+    #2b533b 100%  /* medium teal */
+  );
+  background-size: 220% 220%;
+  animation: gradientShift 18s ease-in-out infinite;
+
   color: #111;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* misty blurred glow over the gradient */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -40px;           /* extend a bit so the blur covers edges */
+  background: inherit;    /* use the same gradient as body */
+  filter: blur(40px);
+  opacity: 0.9;           /* adjust for more/less intensity */
+  z-index: -1;
+  transform: scale(1.1);  /* slight zoom for extra softness */
 }
 
 /* Page layout */
@@ -63,6 +89,18 @@ iframe {
   border: 2px solid #333;
   border-radius: 4px;
 }
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 /* Optional: keep content off the very edges on mobile */
 @media (max-width: 600px) {
