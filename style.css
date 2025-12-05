@@ -43,43 +43,128 @@ main {
   margin: 0 auto;
 }
 
-/* Navigation – matches your current HTML (no <ul>) */
+/* Navigation – top right, white text */
 nav {
-  margin: 0 0 20px 0;
+  margin: 0;
+  padding: 24px 40px 0;
   display: flex;
+  justify-content: flex-end;
   gap: 16px;
   align-items: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+}
+
+nav a,
+nav span {
+  color: #ffffff;
 }
 
 nav a {
   text-decoration: none;
-  color: #333;
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 nav a:hover {
-  border-bottom-color: #a98fd3; /* purple accent */
+  border-bottom-color: #ffffff;
 }
 
 /* Headings */
 h1 {
   font-size: 2.4rem;
   margin-bottom: 10px;
-  color: #111;
+  color: #ffffff;
 }
 
 h2 {
   font-size: 1.4rem;
   margin-top: 30px;
   margin-bottom: 8px;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Paragraphs */
 p {
   line-height: 1.5;
+  color: #f9f9ff;
 }
+
+/* Hero / landing page */
+.hero {
+  min-height: calc(100vh - 80px); /* full-screen feel under the nav */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px 40px;
+}
+
+.hero-text {
+  max-width: 900px;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 12px;
+  color: #fdfdfd;
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* signature bottom-right */
+.hero-name {
+  margin-top: 60px;
+  align-self: flex-end;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+/* Projects page layout */
+.projects-page {
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+}
+
+.projects-intro {
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-list li {
+  margin-bottom: 10px;
+}
+
+.project-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-bottom: 1px solid transparent;
+}
+
+.project-list a:hover {
+  border-bottom-color: #ffffff;
+}
+
 
 /* Project iframe (for pages where you embed sketches) */
 iframe {
