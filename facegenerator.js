@@ -21,7 +21,7 @@ function setup() {
   mouthW = random(28, 46);
   mouthH = random(5, 12);
   fangLen = random(0, 10);
-}
+
 
 function draw() {
   background(8);
