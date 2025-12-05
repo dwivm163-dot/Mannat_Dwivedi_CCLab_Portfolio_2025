@@ -44,13 +44,23 @@ main {
   margin: 0 auto;
 }
 
-
+/* Navigation – fixed top right, white text */
 nav {
+  position: fixed;
+  top: 24px;
+  right: 40px;
+
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
-  letter-spacing: 0.25em;
   text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #ffffff;
+  z-index: 10;
 }
 
 nav a,
@@ -63,11 +73,15 @@ nav a {
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
 }
 
 nav a:hover {
   border-bottom-color: #ffffff;
+  opacity: 1;
 }
+
 
 /* Headings */
 h1 {
@@ -97,12 +111,14 @@ p {
 
 /* Hero / landing page */
 .hero {
-  min-height: calc(100vh - 80px); /* full-screen feel under the nav */
+  position: relative;                /* added */
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 40px 40px;
 }
+
 
 .hero-text {
   max-width: 900px;
@@ -140,13 +156,19 @@ p {
 
 /* signature bottom-right */
 .hero-name {
-  margin-top: 60px;
-  align-self: flex-end;
+  position: absolute;
+  right: 60px;          /* distance from right edge */
+  bottom: 40px;         /* distance from bottom edge */
+
   font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: 1.4rem;
+  font-size: 2rem;      /* bigger name */
+  font-weight: 400;     /* regular, not bold */
   color: #ffffff;
+
+  margin: 0;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
+
 
 nav,
 nav a,
